@@ -218,3 +218,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ================================
+# Adaptive Diabetes MLOps project
+# ================================
+
+# Environment variables
+.env
+
+# Local datasets
+/data/raw/*
+!/data/raw/.gitkeep
+
+/data/processed/*
+!/data/processed/.gitkeep
+
+# MLflow local storage
+/mlruns/
+
+# Generated artifacts
+/artifacts/
+
+# Logs
+/logs/
+
