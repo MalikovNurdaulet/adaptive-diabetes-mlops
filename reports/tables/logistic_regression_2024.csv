@@ -1,0 +1,23 @@
+,beta,odds_ratio,ci_lower,ci_upper,p_value
+Intercept,-7.5375,0.0005,0.0005,0.0006,0.0
+"C(sex, Treatment(reference=2))[T.1.0]",0.3727,1.4517,1.4205,1.4836,4.0902470009592163e-247
+"C(physical_activity, Treatment(reference=1))[T.2.0]",0.3922,1.4802,1.4456,1.5156,2.3025524508167183e-231
+"C(smoking_status, Treatment(reference=4))[T.1.0]",0.1366,1.1464,1.1019,1.1926,1.2935943870193407e-11
+"C(smoking_status, Treatment(reference=4))[T.2.0]",0.0361,1.0368,0.9735,1.1041,0.2607314081544446
+"C(smoking_status, Treatment(reference=4))[T.3.0]",0.1254,1.1336,1.107,1.1607,2.9986007890435223e-25
+"C(alcohol_use, Treatment(reference=2))[T.1.0]",-0.5114,0.5996,0.5863,0.6133,0.0
+"C(education, Treatment(reference=4))[T.1.0]",0.2147,1.2395,1.1797,1.3024,1.75713399471966e-17
+"C(education, Treatment(reference=4))[T.2.0]",0.1026,1.1081,1.0762,1.1408,5.433371588574008e-12
+"C(education, Treatment(reference=4))[T.3.0]",0.1736,1.1896,1.1577,1.2224,6.984144002266756e-36
+"C(income, Treatment(reference=7))[T.1.0]",0.638,1.8927,1.7699,2.0241,1.583551660940197e-77
+"C(income, Treatment(reference=7))[T.2.0]",0.565,1.7595,1.6546,1.871,1.463765540095042e-72
+"C(income, Treatment(reference=7))[T.3.0]",0.4234,1.5271,1.4384,1.6213,9.591981041290115e-44
+"C(income, Treatment(reference=7))[T.4.0]",0.3369,1.4006,1.3212,1.4847,1.066453292325466e-29
+"C(income, Treatment(reference=7))[T.5.0]",0.263,1.3008,1.2325,1.3729,1.175015589849115e-21
+"C(income, Treatment(reference=7))[T.6.0]",0.186,1.2044,1.1393,1.2732,5.30463284873713e-11
+"C(race_group, Treatment(reference=1))[T.2.0]",0.5565,1.7446,1.6808,1.8108,1.419008104112092e-188
+"C(race_group, Treatment(reference=1))[T.3.0]",0.5545,1.741,1.66,1.826,4.783263292812117e-115
+"C(race_group, Treatment(reference=1))[T.4.0]",0.2435,1.2757,1.1858,1.3723,6.349955250085226e-11
+"C(race_group, Treatment(reference=1))[T.5.0]",0.42,1.5219,1.4625,1.5838,5.639226169325154e-95
+age10,0.4724,1.6038,1.5909,1.6167,0.0
+bmi5,0.3942,1.4832,1.4717,1.4948,0.0
