@@ -3,33 +3,25 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-
 import requests
-
 
 RAW_DIR = Path("data/raw")
 MANIFEST_PATH = RAW_DIR / "manifest.json"
-
 CDC_URL_TEMPLATE = (
     "https://www.cdc.gov/brfss/annual_data/"
     "{year}/files/LLCP{year}XPT.zip"
 )
 
-
 def calculate_sha256(file_path: Path) -> str:
     sha256 = hashlib.sha256()
-
     with file_path.open("rb") as file:
         for chunk in iter(lambda: file.read(1024 * 1024), b""):
             sha256.update(chunk)
-
     return sha256.hexdigest()
-
 
 def load_manifest() -> dict:
     if not MANIFEST_PATH.exists():
         return {"datasets": []}
-
     with MANIFEST_PATH.open("r", encoding="utf-8") as file:
         return json.load(file)
 
@@ -51,15 +43,12 @@ def dataset_exists(year: int, manifest: dict) -> bool:
 
             if file_path.exists():
                 return True
-
     return False
 
 
 def download_brfss(year: int, force: bool = False) -> Path:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-
     manifest = load_manifest()
-
     file_name = f"LLCP{year}XPT.zip"
     output_path = RAW_DIR / file_name
     temp_path = RAW_DIR / f"{file_name}.part"
@@ -95,13 +84,10 @@ def download_brfss(year: int, force: bool = False) -> Path:
         ) as response:
 
             response.raise_for_status()
-
             total_size = int(
                 response.headers.get("content-length", 0)
             )
-
             downloaded = 0
-
             with temp_path.open("wb") as file:
                 for chunk in response.iter_content(
                     chunk_size=1024 * 1024
@@ -123,13 +109,11 @@ def download_brfss(year: int, force: bool = False) -> Path:
                         )
 
         print()
-
         temp_path.replace(output_path)
 
     except requests.RequestException as error:
         if temp_path.exists():
             temp_path.unlink()
-
         raise RuntimeError(
             f"Failed to download BRFSS {year}: {error}"
         ) from error
@@ -172,7 +156,6 @@ def download_brfss(year: int, force: bool = False) -> Path:
     print(MANIFEST_PATH)
 
     return output_path
-
 
 def main() -> None:
     parser = argparse.ArgumentParser(
