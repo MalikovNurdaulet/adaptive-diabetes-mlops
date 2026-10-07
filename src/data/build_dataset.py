@@ -4,6 +4,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pyreadstat
+from typing import cast
 
 
 RAW_DIR = Path("data/raw")
@@ -52,11 +53,15 @@ def load_brfss(year: int) -> pd.DataFrame:
 
     print("Reading selected BRFSS variables...")
 
-    df, _ = pyreadstat.read_xport(
+    
+
+    raw_df, _ = pyreadstat.read_xport(
         str(xpt_path),
         usecols=FEATURE_COLUMNS,
         encoding="LATIN1",
     )
+
+    df = cast(pd.DataFrame, raw_df)
 
     print(f"Raw selected rows: {len(df):,}")
     print(f"Selected columns: {len(df.columns)}")
