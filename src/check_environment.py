@@ -1,10 +1,8 @@
 ﻿import sys
-
 import numpy as np
 import pandas as pd
 import sklearn
 import statsmodels
-
 
 def main():
     print("Adaptive Diabetes MLOps")
@@ -15,7 +13,6 @@ def main():
     print(f"Scikit-learn: {sklearn.__version__}")
     print(f"Statsmodels: {statsmodels.__version__}")
     print("Environment status: OK")
-
 
 if __name__ == "__main__":
     main()
